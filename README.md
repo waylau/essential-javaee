@@ -7,10 +7,11 @@ The Java Enterprise Edition (EE) platform is built on Java Standard Edition (SE)
 Topics include:
 
 * Java's past, present, and future
+* IDE and Development Environment Intro
 * JavaServer Faces (JSF)
 * Context and Dependency Injection (CDI)
 * JavaServer Pages (JSP) and Expression Language (EL)
-* Enterprise Java Beans (EJB)
+* Enterprise Java Beans (EJB)3
 * Java Message Service (JMS)
 * Java Persistence API (JPA)
 * Bean Validation API
