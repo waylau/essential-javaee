@@ -15,8 +15,8 @@
     * [使用 Criteria API](docs/jpa/jpa-criteria-api.md)
     * [基于字符串的 Criteria 查询](docs/jpa/jpa-criteria-string-query.md)
     * [控制并发访问](docs/jpa/jpa-controlling-concurrent-access.md)
-        * [使用 Entity Graph](docs/jpa/jpa-entity-graph.md)
-        * [使用二级缓存](docs/jpa/jpa-second-level-cache.md)
+    * [使用 Entity Graph](docs/jpa/jpa-entity-graph.md)
+    * [使用二级缓存](docs/jpa/jpa-second-level-cache.md)
 * Bean Validation API
 * Java API for RESTful Web Services (JAX-RS)
 * WebSocket API
