@@ -112,7 +112,7 @@ public List findWithName(String name) {
 
 select 查询有六个子句：SELECT、FROM、WHERE、GROUP BY、HAVING 和 ORDER BY。 SELECT 和 FROM子句是必需的，而 WHERE、GROUP BY、HAVING 和 ORDER BY子句是可选的。 下面是 select 查询的高级 BNF 语法：
 
-```bnf
+```
 QL_statement ::= select_clause from_clause 
   [where_clause][groupby_clause][having_clause][orderby_clause]
 ```
