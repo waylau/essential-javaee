@@ -20,20 +20,20 @@ Java Persistence API 为 Java 开发人员提供了一种用于在Java应用程�
 一个实体类，需满足以下条件：
 
 * 类必须用`javax.persistence.Entity`注解。
-* 类必须有一个public或protected的无参数的构造函数。 类可以具有其他构造函数。
-* 类不能声明为final。 没有方法或持久化实例变量必须声明为 final。
-* 如果实体实例被当作值以分离对象方式进行传递（例如通过会话bean的远程业务接口），则该类必须实现`Serializable`接口。
+* 类必须有一个 public 或 protected 的无参数的构造函数。该类可以具有其他构造函数。
+* 类不能声明为 final 。没有方法的或持久化实例变量必须声明为 final。
+* 如果实体实例被当作值以分离对象方式进行传递（例如通过会话 bean 的远程业务接口），则该类必须实现`Serializable`接口。
 * 实体可以扩展实体类或者是非实体类，并且非实体类可以扩展实体类。
-* 持久化实例变量必须声明为 private、protected 或 package-private，并且只能通过实体类的方法直接访问。 客户端必须通过访问器或业务方法访问实体的状态。
+* 持久化实例变量必须声明为 private、protected 或 package-private，并且只能通过实体类的方法直接访问。客户端必须通过访问器或业务方法访问实体的状态。
 
 ### 实体类中的持久化字段和属性
 
-可以通过实体的实例变量或属性访问实体的持久状态。 字段或属性必须是以下Java语言类型：
+可以通过实体的实例变量或属性访问实体的持久状态。字段或属性必须是以下 Java 语言类型：
 
-* Java 原语类型
+* Java 基本数据类型
 * java.lang.String
 * 其他可序列化类型，包括：
-	* Java原始类型的包装器
+	* Java 基本数据类型的包装器
 	* java.math.BigInteger
 	* java.math.BigDecimal
 	* java.util.Date
@@ -52,13 +52,14 @@ Java Persistence API 为 Java 开发人员提供了一种用于在Java应用程�
 
 实体可以使用持久化字段、持久化属性或两者的组合。 如果映射注解应用于实体的实例变量，则实体使用持久化字段。 如果映射注解应用于实体的JavaBeans风格属性的getter方法，则实体使用持久化属性。
 
+
 #### 持久化字段
 
-如果实体类使用持久化字段，则 Persistence 运行时直接访问实体类实例变量。所有未注解的字段`javax.persistence.Transient`或未标记为Java `transient`将被持久化到数据存储。对象/关系映射注解必须应用于实例变量。
+如果实体类使用持久化字段，则 Persistence 运行时直接访问实体类实例变量。所有未使用 `javax.persistence.Transient` 注解的字段或未标记为 Java `transient`将被持久化到数据存储中。对象/关系映射注解必须应用于实例变量。
 
 #### 持久化属性
 
-如果实体使用持久性属性，实体必须遵循JavaBeans组件的方法约定。 JavaBeans风格的属性使用getter和setter方法，它们通常以实体类的实例变量名称命名。对于实体的Type类型的每个持久化属性，都有一个getter方法`getProperty`和setter方法`setProperty`。如果属性是布尔值，您可以使用`isProperty`而不是`getProperty。`例如，Customer实体使用持久化属性并具有称为`firstName`的专用实例变量，则该类定义用于检索和设置firstName实例变量的状态的`getFirstName`和`setFirstName`方法。
+如果实体使用持久化属性，实体必须遵循 JavaBean 组件的方法约定。 JavaBean 风格的属性使用 getter 和 setter 方法，它们通常以实体类的实例变量名称命名。对于实体的每个持久化属性，都有一个 getter 方法和 setter 。如果属性是布尔值，您可以使用`isProperty`而不是`getProperty。`例如，Customer实体使用持久化属性并具有称为`firstName`的专用实例变量，则该类定义用于检索和设置 firstName 实例变量的状态的`getFirstName`和`setFirstName`方法。
 
 单值持久化属性的方法签名如下：
 
@@ -182,7 +183,7 @@ public class Contact implements Serializable {
 
 每个实体都有唯一的对象标识符。例如，客户实体可以通过客户号码来标识。唯一标识符或主键（primary key）使客户端能够定位特定实体实例。每个实体都必须有一个主键。实体可以具有简单主键或复合主键。
 
-简单主键使用`javax.persistence.Id`注注解来表示主键属性或字段。
+简单主键使用`javax.persistence.Id`注解来表示主键属性或字段。
 
 当主键由多个属性组成时，使用复合主键，该属性对应于一组单个持久化属性或字段。复合主键必须在主键类中定义。复合主键使用`javax.persistence.EmbeddedId`和`javax.persistence.IdClass`注解来表示。
 
